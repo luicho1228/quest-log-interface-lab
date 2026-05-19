@@ -46,17 +46,17 @@ public class QuestLog {
     }
     public void printSummary(){
         StringBuilder summary = new StringBuilder();
-        summary.append("QUEST LOG");
-        summary.append("-------------------------------------");
+        summary.append("QUEST LOG\n");
+        summary.append("-------------------------------------\n");
         int count =1;
         for (ScoreEvent event: events){
             summary.append("\n").append(count).append(". ").append(event.getSummary());
             count++;
         }
-        summary.append("-------------------------------------");
+        summary.append("\n-------------------------------------");
         summary.append("\n").append("Total score: ").append(getTotalScore());
-        summary.append("Best event: ").append(getHighestScoringEvent());
-        summary.append("Worst event: ").append(getLowestScoringEvent());
+        summary.append("\nBest event: ").append(getHighestScoringEvent().getSummary());
+        summary.append("\nWorst event: ").append(getLowestScoringEvent().getSummary());
         System.out.println(summary);
     }
 }

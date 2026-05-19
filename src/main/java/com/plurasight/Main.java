@@ -2,14 +2,13 @@ package com.plurasight;
 
 public class Main {
     public static void main(String[] args) {
-
-//        MonsterDefeat md = new MonsterDefeat("Goblin",3,true);
-//        System.out.println(md.getSummary());
-//        TreasureFound tf = new TreasureFound("Gold","rare");
-//        System.out.println(tf.getSummary());
-        ScoreEvent event1 = new MonsterDefeat("Celestial Dragon",5,true);
-        ScoreEvent event2 = new TreasureFound("Esmerald","legendary");
-        System.out.println(event1.getSummary());
-        System.out.println(event2.getSummary());
+        QuestLog log = new QuestLog();
+        log.addEvent(new MonsterDefeat("Celestial Dragon",5,true));
+        log.addEvent(new TreasureFound("Esmerald","legendary"));
+        log.addEvent( new TreasureFound("Gold","rare"));
+        log.addEvent(new TrapTriggered("Booby Trap",40));
+        log.addEvent(new RoomExplored("Palace of Wisdom",true));
+        log.addEvent(new MonsterDefeat("Goblin",3,true));
+        log.printSummary();
     }
 }
