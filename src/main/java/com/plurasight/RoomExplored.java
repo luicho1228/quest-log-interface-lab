@@ -1,8 +1,8 @@
 package com.plurasight;
 
 public class RoomExplored implements ScoreEvent{
-    private String roomName;
-    private boolean secretFound;
+    private final String roomName;
+    private final boolean secretFound;
 
     public RoomExplored(String roomName, boolean secretFound) {
         this.roomName = roomName;

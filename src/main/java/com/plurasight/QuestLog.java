@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestLog {
-    private List<ScoreEvent> events;
+    private final List<ScoreEvent> events;
 
     public QuestLog() {
         events = new ArrayList<>();

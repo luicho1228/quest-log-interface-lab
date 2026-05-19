@@ -1,8 +1,8 @@
 package com.plurasight;
 
 public class TrapTriggered implements ScoreEvent{
-    private String trapName;
-    private int damage;
+    private final String trapName;
+    private final int damage;
 
 
     public TrapTriggered(String trapName, int damage) {
