@@ -1,10 +1,17 @@
 package com.plurasight;
 
-public class TreasureFound {
-    private String treasureName;
-    private String rarity;
+public class TreasureFound implements ScoreEvent{
+    private final String treasureName;
+    private final String rarity;
 
+    public TreasureFound(String treasureName, String rarity) {
+        this.treasureName = treasureName;
+        this.rarity = rarity;
+    }
+
+    @Override
     public String getName(){return treasureName;}
+    @Override
     public int getPoints(){
         int points;
         switch (rarity){
@@ -23,8 +30,9 @@ public class TreasureFound {
         }
         return points;
     }
+    @Override
     public String getSummary(){
-        return String.format("Found %s %s for %d points",rarity,treasureName,getPoints());
+        return String.format("Found %s %s for %d points",rarity,getName(),getPoints());
     }
 
 }

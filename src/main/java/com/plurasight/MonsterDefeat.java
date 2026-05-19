@@ -1,6 +1,6 @@
 package com.plurasight;
 
-public class MonsterDefeat {
+public class MonsterDefeat implements ScoreEvent {
     private final String monsterName;
     private final int difficultyLevel;
     private final boolean boss;
@@ -11,9 +11,11 @@ public class MonsterDefeat {
         this.boss = boss;
     }
 
+    @Override
     public String getName(){
-        return"";
+        return monsterName;
     }
+    @Override
     public int getPoints(){
         int points = 50;
         if(boss){
@@ -21,8 +23,9 @@ public class MonsterDefeat {
         }
         return difficultyLevel * points;
     }
+    @Override
     public String getSummary(){
-        return String.format("Defeated %s for %d points",monsterName,getPoints());
+        return String.format("Defeated %s for %d points",getName(),getPoints());
     }
 
 }
